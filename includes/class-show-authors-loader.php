@@ -33,7 +33,7 @@ class Show_Authors_Loader {
 	protected $actions;
 
 	/**
-	 * The array of actions registered with WordPress.
+	 * The array of shortcodes registered with WordPress.
 	 *
 	 * @since    1.0.0
 	 * @access   protected
@@ -77,7 +77,7 @@ class Show_Authors_Loader {
 	}
 
 		/**
-	 * Add a new filter to the collection to be registered with WordPress.
+	 * Add a new shortcode to the collection to be registered with WordPress.
 	 *
 	 * @since    1.0.0
 	 * @param    string               $hook             The name of the WordPress filter that is being registered.
