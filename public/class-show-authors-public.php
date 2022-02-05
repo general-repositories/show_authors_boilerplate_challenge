@@ -120,6 +120,13 @@ class Show_Authors_Public {
 		die();
 	}
 
+	public function my_must_login(){
+		$result['type'] = "must login";
+		$result = json_encode($result);
+		echo $result;
+		die();
+	}
+
 	public function render_frontend(){
 		?>
 			<script>
