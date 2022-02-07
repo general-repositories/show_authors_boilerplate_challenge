@@ -130,15 +130,19 @@ class Show_Authors_Public {
 	public function render_frontend(){
 		?>
 			<script>
+
 				let isRan = false;
 				const ajaxurl = '<?php echo admin_url('admin-ajax.php');?>';
 
 				function showUsers(){
+
 					const userList = document.getElementById('userList');
 					const div = document.getElementById('showUsers');
 
 					if(!isRan){
+
 						isRan = true;
+
 						fetch(ajaxurl, {
 							method: 'POST',
 							headers: {
@@ -148,22 +152,25 @@ class Show_Authors_Public {
 						})
 						.then(res=>res.json())
 						.then(object=>{
+
 							if(object.type != 'must login'){
+
 								console.log(object);
 								for (const key in object){
 									const element = document.createElement('li');
 									element.innerText = object[key];
 									userList.appendChild(element);
 								}
-							}
-							else alert('you must be logged in to see the list');
+							}else alert('you must be logged in to see the list');
 						});
 					}
 				}
+
 			</script>
 
 			<div
 				id="showUsers"
+				class='users-div'
 				data-nonce="<?php echo wp_create_nonce("show_authors_nonce");?>"
 				post-id="<?php echo get_the_ID();?>"
 				user="<?php echo get_current_user_id();?>"
