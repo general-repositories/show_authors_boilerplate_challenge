@@ -175,9 +175,7 @@ class Show_Authors_Public {
 				post-id="<?php echo get_the_ID();?>"
 				user="<?php echo get_current_user_id();?>"
 			>
-				<button
-					onclick="showUsers()"
-				>show users</button>
+				<button onclick="showUsers()">show users</button>
 	
 				<ul id="userList">
 	
