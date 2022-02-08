@@ -104,7 +104,12 @@ class Show_Authors_Public {
 
 	}
 
-	public function show_authors(){
+	/**
+	 * Server side function to fetch author names through admin-ajax
+	 *
+	 * @since    1.0.0
+	*/
+	public function show_authors_server(){
 	
 		if(!wp_verify_nonce($_REQUEST['nonce'], "show_authors_nonce")){
 			exit("No naughty business please");
@@ -124,13 +129,23 @@ class Show_Authors_Public {
 		die();
 	}
 
-	public function my_must_login(){
+	/**
+	 * Server side function to deny author names through admin-ajax
+	 *
+	 * @since    1.0.0
+	*/
+	public function show_authors_nopriv_server(){
 		$result['type'] = "must login";
 		$result = json_encode($result);
 		echo $result;
 		die();
 	}
 
+	/**
+	 * This function is tied to our show_authors shortcode as our plugin frontend
+	 *
+	 * @since    1.0.0
+	*/
 	public function render_frontend(){
 		?>
 			<div
