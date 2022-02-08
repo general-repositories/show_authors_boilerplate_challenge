@@ -96,7 +96,11 @@ class Show_Authors_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/show-authors-public.js', array( 'jquery' ), $this->version, false );
+		wp_register_script($this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/show-authors-public.js', array(), $this->version, false );
+
+		wp_localize_script($this->plugin_name, 'ajax', array('url' => admin_url( 'admin-ajax.php')));
+
+		wp_enqueue_script($this->plugin_name);
 
 	}
 
@@ -129,45 +133,6 @@ class Show_Authors_Public {
 
 	public function render_frontend(){
 		?>
-			<script>
-
-				let isRan = false;
-				const ajaxurl = '<?php echo admin_url('admin-ajax.php');?>';
-
-				function showUsers(){
-
-					const userList = document.getElementById('userList');
-					const div = document.getElementById('showUsers');
-
-					if(!isRan){
-
-						isRan = true;
-
-						fetch(ajaxurl, {
-							method: 'POST',
-							headers: {
-								'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-							},
-							body: `action=show_authors&nonce=${div.getAttribute('data-nonce')}`
-						})
-						.then(res=>res.json())
-						.then(object=>{
-
-							if(object.type != 'must login'){
-
-								console.log(object);
-								for (const key in object){
-									const element = document.createElement('li');
-									element.innerText = object[key];
-									userList.appendChild(element);
-								}
-							}else alert('you must be logged in to see the list');
-						});
-					}
-				}
-
-			</script>
-
 			<div
 				id="showUsers"
 				class='users-div'

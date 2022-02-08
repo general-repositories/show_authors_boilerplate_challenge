@@ -175,7 +175,6 @@ class Show_Authors {
 		$this->loader->add_action('wp_ajax_show_authors', $plugin_public, 'show_authors');
 		$this->loader->add_action('wp_ajax_nopriv_show_authors', $plugin_public, 'my_must_login');
 		$this->loader->add_shortcode('show_authors', $plugin_public, 'render_frontend');
-
 	}
 
 	/**
