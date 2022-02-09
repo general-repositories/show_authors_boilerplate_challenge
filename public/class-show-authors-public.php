@@ -147,21 +147,8 @@ class Show_Authors_Public {
 	 * @since    1.0.0
 	*/
 	public function render_frontend(){
-		?>
-			<div
-				id="showUsers"
-				class='users-div'
-				data-nonce="<?php echo wp_create_nonce("show_authors_nonce");?>"
-				post-id="<?php echo get_the_ID();?>"
-				user="<?php echo get_current_user_id();?>"
-			>
-				<button onclick="showUsers()">show users</button>
-	
-				<ul id="userList">
-	
-				</ul>
-			</div>
-		<?php
+
+		include 'partials/show-authors-public-display.php';
 	}
 
 }

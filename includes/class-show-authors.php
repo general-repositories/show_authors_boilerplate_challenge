@@ -66,11 +66,11 @@ class Show_Authors {
 	 *
 	 * @since    1.0.0
 	 */
-	public function __construct() {
+	public function __construct(){
+
 		if ( defined( 'SHOW_AUTHORS_VERSION' ) ) {
 			$this->version = SHOW_AUTHORS_VERSION;
-		} else {
-			$this->version = '1.0.0';
+		} else {$this->version = '1.0.0';
 		}
 		$this->plugin_name = 'show-authors';
 

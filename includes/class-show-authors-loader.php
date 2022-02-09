@@ -58,6 +58,7 @@ class Show_Authors_Loader {
 	public function __construct() {
 
 		$this->actions = array();
+		$this->shortcodes = array();
 		$this->filters = array();
 
 	}
@@ -133,7 +134,7 @@ class Show_Authors_Loader {
 	}
 
 	/**
-	 * Register the filters and actions with WordPress.
+	 * Register the filters and actions and shortcodes with WordPress.
 	 *
 	 * @since    1.0.0
 	 */
