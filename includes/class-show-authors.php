@@ -123,7 +123,6 @@ class Show_Authors {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-show-authors-public.php';
 
 		$this->loader = new Show_Authors_Loader();
-
 	}
 
 	/**
@@ -156,6 +155,8 @@ class Show_Authors {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
+		$this->loader->add_action('admin_menu', $plugin_admin, 'admin_menu');
 
 	}
 
@@ -216,7 +217,4 @@ class Show_Authors {
 	public function get_version() {
 		return $this->version;
 	}
-
-	
-
 }

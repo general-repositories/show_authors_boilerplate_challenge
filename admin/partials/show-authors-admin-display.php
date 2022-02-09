@@ -13,4 +13,14 @@
  */
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<div class="grid-container">
+	<div class="header-cell">
+		<h1>&ltshow-authors&gt</h1>
+	</div>
+	<div class="content-cell">
+		<h1>content</h1>
+	</div>
+	<div class="footer-cell">
+		<h1>footer</h1>
+	</div>
+</div>

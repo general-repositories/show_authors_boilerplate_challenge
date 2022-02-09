@@ -100,4 +100,30 @@ class Show_Authors_Admin {
 
 	}
 
+	/**
+	 * Add plugin menu to wordpress admin
+	 *
+	 * @since    1.0.3
+	*/
+	public function admin_menu(){
+		add_menu_page(
+			'Show Authors',
+			'Show Authors',
+			'manage_options',
+			'show-authors',
+			array($this, 'render_admin'),
+			'dashicons-schedule',
+			3
+		);
+	}
+
+	/**
+	 * Render plugin menu in admin
+	 *
+	 * @since    1.0.3
+	*/
+	public function render_admin(){
+		include 'partials/show-authors-admin-display.php';
+	}
+
 }
