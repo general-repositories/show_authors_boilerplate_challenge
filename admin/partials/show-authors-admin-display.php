@@ -13,14 +13,59 @@
  */
 ?>
 
+<?php $options = get_option('roles_to_show');?>
+
 <div class="grid-container">
-	<div class="header-cell">
-		<h1>&ltshow-authors&gt</h1>
+
+	<div class="headerL-cell">
+		<h1 class='wp-heading-inline'>&ltshow-authors&gt</h1>
 	</div>
+
 	<div class="content-cell">
-		<h1>content</h1>
+
+		<table class="wp-list-table widefat fixed striped table-view-list posts">
+			<thead>
+				<tr>
+					<td id="cb" class="column-cb check-column"></td>
+					<th scope="col" id="title" class="">
+						<h4 class='no-margin'>Role</h4>
+					</th>
+				</tr>
+			</thead>
+
+			<tbody id="the-list">
+				<tr>
+					<th scope="row" class="check-column">
+						<input id='admin' type="checkbox"
+						<?php if($options['admin']){echo 'checked';}?>>
+					</th>
+					<td class="title column-title column-primary">
+						<strong>Admin</strong>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="check-column">
+						<input id='author' type="checkbox"
+						<?php if($options['author']){echo 'checked';}?>>
+					</th>
+					<td class="title column-title column-primary">
+						<strong>Author</strong>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" class="check-column">
+						<input id='editor' type="checkbox"
+						<?php if($options['editor']){echo 'checked';}?>>
+					</th>
+					<td class="title column-title column-primary">
+						<strong>Editor</strong>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<button class='button-styling' onclick='saveOptions()'>Save</button>
+
 	</div>
-	<div class="footer-cell">
-		<h1>footer</h1>
-	</div>
+	
 </div>

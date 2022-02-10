@@ -3,27 +3,48 @@
  * included in this file.
  */
 
+ #wpwrap, #wpbody, #wpbody-content{
+	 height: 90%;
+ }
+
 .grid-container{
 	display: grid;
 
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 10rem auto 10rem;
+	grid-template-rows: 8rem auto 1fr;
 
 	grid-template-areas:
-		"header header header"
-		". content ."
+		"headerL header headerR"
+		"content . ."
 		"footer footer footer"
 	;
+
+	height: 100%;
 }
 
-.header-cell{
-	grid-area: header;
+.headerL-cell{
+	grid-area: headerL;
+
+	padding: .2rem;
 }
 
 .content-cell{
 	grid-area: content;
+	margin: 1rem;
 }
 
-.footer-cell{
+/* .footer-cell{
 	grid-area: footer;
+	
+	display: flex;
+	flex-direction: column-reverse;
+} */
+
+
+.button-styling{
+	margin: 10px 0;
+}
+
+.no-margin{
+	margin: 0;
 }
