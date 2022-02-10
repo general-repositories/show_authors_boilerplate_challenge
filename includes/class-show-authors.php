@@ -155,9 +155,10 @@ class Show_Authors {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
+		// Admin menu add and render
 		$this->loader->add_action('admin_menu', $plugin_admin, 'admin_menu');
-
+		// admin ajax adds
+		$this->loader->add_action('wp_ajax_check_options', $plugin_admin, 'check_options');
 	}
 
 	/**
@@ -173,8 +174,10 @@ class Show_Authors {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		// Public ajax adds
 		$this->loader->add_action('wp_ajax_show_authors', $plugin_public, 'show_authors_server');
 		$this->loader->add_action('wp_ajax_nopriv_show_authors', $plugin_public, 'show_authors_nopriv_server');
+		// Public render add
 		$this->loader->add_shortcode('show_authors', $plugin_public, 'render_frontend');
 	}
 

@@ -96,8 +96,38 @@ class Show_Authors_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/show-authors-admin.js', array( 'jquery' ), $this->version, false );
+		wp_register_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/show-authors-admin.js', array(), $this->version, false);
 
+		wp_localize_script($this->plugin_name, 'ajax', array('url'=>admin_url('admin-ajax.php')));
+
+		wp_enqueue_script($this->plugin_name);
+
+	}
+
+	/**
+	 * Server side function to update and return plugin settings
+	 *
+	 * @since    1.0.3
+	*/
+	public function check_options(){
+
+		$options = array(
+			'admin' => false,
+			'author' => false,
+			'editor' => false
+		);
+
+		if($_REQUEST['admin'] == 'true'){$options['admin'] = true;}
+		if($_REQUEST['author'] == 'true'){$options['author'] = true;}
+		if($_REQUEST['editor'] == 'true'){$options['editor'] = true;}
+
+		update_option('roles_to_show', $options, false);
+
+		$options['success'] = true;
+
+		$result = json_encode($options);
+		echo $result;
+		die();
 	}
 
 	/**
