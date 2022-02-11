@@ -26,6 +26,14 @@ function saveOptions(){
 			setTimeout(()=>{
 				document.getElementById('show-saved').style.opacity = 0;
 			}, 1500);
+		}else{
+
+			document.getElementById('saved-heading').innerText = 'Error';
+			document.getElementById('show-saved').style.opacity = 1;
+	
+			setTimeout(()=>{
+				document.getElementById('show-saved').style.opacity = 0;
+			}, 1500);
 		}
 	});
 }

@@ -70,7 +70,7 @@
 
 	<div class="footer-cell">
 		<div id='show-saved' class="settings-saved">
-			<h3>Settings Saved</h3>
+			<h3 id='saved-heading'>Settings Saved</h3>
 		</div>
 	</div>
 	
