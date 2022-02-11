@@ -109,7 +109,7 @@ class Show_Authors_Admin {
 	 *
 	 * @since    1.0.3
 	*/
-	public function check_options(){
+	public function save_options(){
 
 		$options = array(
 			'admin' => false,

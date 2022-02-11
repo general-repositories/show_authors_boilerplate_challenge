@@ -158,7 +158,7 @@ class Show_Authors {
 		// Admin menu add and render
 		$this->loader->add_action('admin_menu', $plugin_admin, 'admin_menu');
 		// admin ajax adds
-		$this->loader->add_action('wp_ajax_check_options', $plugin_admin, 'check_options');
+		$this->loader->add_action('wp_ajax_save_options', $plugin_admin, 'save_options');
 	}
 
 	/**

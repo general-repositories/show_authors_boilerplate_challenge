@@ -14,16 +14,19 @@ function saveOptions(){
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 		},
-		body: `action=check_options&admin=${adminSet}&author=${authorSet}&editor=${editorSet}`
+		body: `action=save_options&admin=${adminSet}&author=${authorSet}&editor=${editorSet}`
 	})
 	.then(res=>res.json())
 	.then(object=>{
 		
-		document.getElementById('show-saved').style.opacity = 1;
+		if(object.success){
 
-		setTimeout(()=>{
-			document.getElementById('show-saved').style.opacity = 0;
-		}, 1500);
+			document.getElementById('show-saved').style.opacity = 1;
+	
+			setTimeout(()=>{
+				document.getElementById('show-saved').style.opacity = 0;
+			}, 1500);
+		}
 	});
 }
 
