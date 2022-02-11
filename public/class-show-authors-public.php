@@ -154,6 +154,12 @@ class Show_Authors_Public {
 				$user_number++;
 			}
 		}
+
+		if(!$options['admin'] and !$options['author'] and !$options['editor']){
+			$result['no_opt_message'] = 'No roles selected';
+		}
+
+		$result['success'] = true;
 		
 		$result = json_encode($result);
 		echo $result;

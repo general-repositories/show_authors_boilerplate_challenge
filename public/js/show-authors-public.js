@@ -22,8 +22,10 @@ function showUsers(){
 			if(object.type != 'must login'){
 
 				for(const key in object){
+					
+					if(key == 'success')continue;
 					const element = document.createElement('li');
-					element.innerText = `${object[key]} (${key.slice(0, -6)})`;
+					element.innerText = `${object[key]} (${key != 'no_opt_message' ? key.slice(0, -6) : null})`;
 					userList.appendChild(element);
 				}
 			}else alert('you must be logged in to see the list');
