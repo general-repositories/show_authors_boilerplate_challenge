@@ -117,7 +117,6 @@ class Show_Authors_Public {
 		
 		$options = get_option('roles_to_show');
 
-		
 		if($options['admin']){
 			
 			$user_number = 0;
@@ -130,7 +129,6 @@ class Show_Authors_Public {
 			}
 		}
 
-		
 		if($options['author']){
 			
 			$user_number = 0;

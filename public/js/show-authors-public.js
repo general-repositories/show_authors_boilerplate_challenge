@@ -24,6 +24,7 @@ function showUsers(){
 				for(const key in object){
 					
 					if(key == 'success')continue;
+					
 					const element = document.createElement('li');
 					element.innerText = `${object[key]} (${key != 'no_opt_message' ? key.slice(0, -6) : null})`;
 					userList.appendChild(element);
