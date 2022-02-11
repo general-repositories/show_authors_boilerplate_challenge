@@ -115,12 +115,44 @@ class Show_Authors_Public {
 			exit("No naughty business please");
 		}
 		
-		$users = get_users();
-		$user_number = 0;
-	
-		foreach ($users as $user){
-			$result['user'.$user_number] = $user->display_name;
-			$user_number++;
+		$options = get_option('roles_to_show');
+
+		
+		if($options['admin']){
+			
+			$user_number = 0;
+			
+			$users = get_users(array('role'=>'administrator'));
+		
+			foreach ($users as $user){
+				$result['admin-user'.$user_number] = $user->display_name;
+				$user_number++;
+			}
+		}
+
+		
+		if($options['author']){
+			
+			$user_number = 0;
+			
+			$users = get_users(array('role'=>'author'));
+		
+			foreach ($users as $user){
+				$result['author-user'.$user_number] = $user->display_name;
+				$user_number++;
+			}
+		}
+
+		if($options['editor']){
+			
+			$user_number = 0;
+			
+			$users = get_users(array('role'=>'editor'));
+		
+			foreach ($users as $user){
+				$result['editor-user'.$user_number] = $user->display_name;
+				$user_number++;
+			}
 		}
 		
 		$result = json_encode($result);

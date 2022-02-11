@@ -33,12 +33,18 @@
 	margin: 1rem;
 }
 
-/* .footer-cell{
+.footer-cell{
 	grid-area: footer;
 	
 	display: flex;
 	flex-direction: column-reverse;
-} */
+}
+
+
+.settings-saved{
+	opacity: 0;
+	transition: 1s;
+}
 
 
 .button-styling{

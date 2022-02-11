@@ -18,6 +18,12 @@ function saveOptions(){
 	})
 	.then(res=>res.json())
 	.then(object=>{
-		if(object.success = true)alert('Settings Saved');
+		
+		document.getElementById('show-saved').style.opacity = 1;
+
+		setTimeout(()=>{
+			document.getElementById('show-saved').style.opacity = 0;
+		}, 1500);
 	});
 }
+
