@@ -14,7 +14,7 @@
 	grid-template-rows: 8rem auto 1fr;
 
 	grid-template-areas:
-		"headerL header headerR"
+		"header header headerR"
 		"content . ."
 		"footer footer footer"
 	;
@@ -23,9 +23,11 @@
 }
 
 .headerL-cell{
-	grid-area: headerL;
+	grid-area: header;
 
-	padding: .2rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .content-cell{

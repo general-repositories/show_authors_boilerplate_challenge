@@ -18,7 +18,9 @@
 <div class="grid-container">
 
 	<div class="headerL-cell">
-		<h1 class='wp-heading-inline'>&ltshow-authors&gt</h1>
+		<h1 class='wp-heading-inline'>&ltshow-users&gt</h1>
+
+		<h4>Use the shortcode [show_authors] to add the 'Show Users' button.</h4>
 	</div>
 
 	<div class="content-cell">
